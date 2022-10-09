@@ -4,7 +4,7 @@
   <url>
     <loc>https://blog.starain.ml/manifest.json</loc>
     
-    <lastmod>2022-09-10</lastmod>
+    <lastmod>2022-10-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,25 +13,25 @@
   <url>
     <loc>https://blog.starain.ml/posts/5d5cce6.html</loc>
     
-    <lastmod>2022-09-10</lastmod>
+    <lastmod>2022-10-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.starain.ml/posts/4a17b156.html</loc>
+    <loc>https://blog.starain.ml/posts/6b3c3e1a.html</loc>
     
-    <lastmod>2022-09-10</lastmod>
+    <lastmod>2022-10-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.starain.ml/posts/faa5781e.html</loc>
+    <loc>https://blog.starain.ml/posts/d05fe5c6.html</loc>
     
-    <lastmod>2022-09-10</lastmod>
+    <lastmod>2022-10-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -40,7 +40,25 @@
   <url>
     <loc>https://blog.starain.ml/abc.html</loc>
     
-    <lastmod>2022-09-10</lastmod>
+    <lastmod>2022-10-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.starain.ml/posts/1e105b11.html</loc>
+    
+    <lastmod>2022-10-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.starain.ml/posts/4a17b156.html</loc>
+    
+    <lastmod>2022-09-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -49,11 +67,18 @@
 
   <url>
     <loc>https://blog.starain.ml/</loc>
-    <lastmod>2022-09-10</lastmod>
+    <lastmod>2022-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
+  
+  <url>
+    <loc>https://blog.starain.ml/tags/Hello/</loc>
+    <lastmod>2022-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 
   
