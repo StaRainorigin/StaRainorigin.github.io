@@ -21,6 +21,7 @@ const app = Vue.createApp({
     },
     methods: {
         render() {
+            if (typeof this.renderers === "undefined") return;
             for (let i of this.renderers) i();
         },
         handleScroll() {

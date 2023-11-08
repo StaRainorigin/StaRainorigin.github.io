@@ -71,7 +71,7 @@
 }
 #footer #footer-wrap {
     border-top: 1px solid #aaa;
-    color: #5c6b72;
+    color: #9bccf9a8;
     margin: auto;
     width: 900px;
 }
@@ -167,7 +167,7 @@
     background-size: cover;
     height: 100vh;
     left: 0;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100vw;
     z-index: -1;
@@ -214,10 +214,8 @@
 #home-posts .page-current {
     align-items: center;
     display: flex;
-    font-weight: bold;
     justify-content: center;
     margin-top: 50px;
-    text-align: center;
     width: 100%;
 }
 #home-posts .page-current .current {
@@ -230,6 +228,11 @@
     padding: 5px;
     width: 35px;
 }
+#home-posts .page-current .page-index {
+    font-weight: bold;
+    text-align: center;
+    width: 300px;
+}
 #home-posts .page-current .page-num,
 #home-posts .page-current .page-omit {
     border-radius: 5px;
@@ -239,6 +242,11 @@
     margin: 0 7px;
     padding: 5px;
     width: 35px;
+}
+#home-posts .page-current .prev,
+#home-posts .page-current .next {
+    text-align: center;
+    width: 50px;
 }
 #home-posts .page-current a {
     color: #999;
@@ -339,7 +347,6 @@
     position: fixed;
     top: 0;
     width: 100vw;
-    word-break: keep-all;
     z-index: 2147483647;
 }
 #loading h2,
@@ -466,6 +473,7 @@
     position: relative;
     scrollbar-color: #8ab5ff #e6efff;
     scrollbar-width: thin;
+    word-break: keep-all;
     word-wrap: break-word;
 }
 .article {
@@ -713,6 +721,9 @@ code {
     line-height: 2.5;
     padding: 4px 8px;
 }
+h1 {
+    font-size: 30px;
+}
 h1,
 h2,
 h3,
@@ -722,10 +733,6 @@ h6 {
     color: #1e3e3f;
     font-weight: bold;
     margin: 15px 0;
-    word-break: keep-all;
-}
-h1 {
-    font-size: 30px;
 }
 h2 {
     font-size: 27px;
@@ -921,7 +928,8 @@ ol li {
         width: 350px;
     }
     #home-head #home-info .info .wrap {
-        padding: 50px;
+        padding: 0px;                       
+        /* 改动过的 */
     }
     #home-head #home-info .info .wrap h1 {
         font-size: 46px;
