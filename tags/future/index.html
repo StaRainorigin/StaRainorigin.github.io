@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>Archives | ⭐星雨起源⭐</title>
+        <title>Tags: future | ⭐星雨起源⭐</title>
         <meta name="author" content="海画沙夢w" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -38,8 +38,6 @@
 <script src="/js/lib/preview.js"></script>
 
 
-
-<script src="/js/lib/search.js"></script>
 
 
 
@@ -151,83 +149,112 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                
-<div id="archives">
+                <div id="archives">
     
-    <input id="search-bar" class="input" placeholder="搜索" v-model="rawSearch" />
-    
-    <div id="timeline-wrap" ref="timeline">
+    <div class="categories-tags">
         
-        <div class="timeline" data-title="helloworld">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/11/8</div>
-                <a href="/2023/11/08/hello-world/">
-                    <h3>Hello World</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </span>
-                        
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/Hexo/" style="color: #00bcd4">Hexo</a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </div>
-        </div>
         
-        <div class="timeline" data-title="协程异步操作系统-学习记录">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/11/17</div>
-                <a href="/2023/11/17/%E5%8D%8F%E7%A8%8B%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
-                    <h3>协程异步操作系统-学习记录</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </span>
-                        
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/rCore/" style="color: #ffa2c4">rCore</a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="color: #00a596">操作系统</a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/async/" style="color: #03a9f4">async</a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/future/" style="color: #ffa2c4">future</a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </div>
-        </div>
+        
+        <span>
+            <a href="/tags/Hexo/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                Hexo
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/rCore/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                rCore
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                操作系统
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/async/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                async
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/future/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                future
+            </a>
+        </span>
+        
+        
+        
         
     </div>
+    
+    <div class="timeline">
+        <div class="timeline-tail"></div>
+        <div class="timeline-content">
+            <div class="item-time">2023/11/17</div>
+            <a href="/2023/11/17/%E5%8D%8F%E7%A8%8B%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+                <h3>协程异步操作系统-学习记录</h3>
+            </a>
+            <div class="info">
+                
+                
+                <span class="tags">
+                    <span class="icon">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </span>
+                    
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/rCore/" style="color: #03a9f4">rCore</a>
+                    </span>
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="color: #ffa2c4">操作系统</a>
+                    </span>
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/async/" style="color: #00bcd4">async</a>
+                    </span>
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/future/" style="color: #ff7d73">future</a>
+                    </span>
+                    
+                </span>
+                
+            </div>
+        </div>
+    </div>
+    
 </div>
 
                 <footer id="footer">
