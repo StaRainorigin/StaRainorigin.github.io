@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>Tags: Hexo | ⭐星雨起源⭐</title>
+        <title>协程异步操作系统-学习记录一 | ⭐星雨起源⭐</title>
         <meta name="author" content="海画沙夢w" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -36,6 +36,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -149,107 +153,74 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="/tags/Hexo/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Hexo
-            </a>
+                <div class="article">
+    <div>
+        <h1>协程异步操作系统-学习记录一</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/18
         </span>
         
         
-        
-        
-        
-        <span>
-            <a href="/tags/rCore/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                rCore
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/rCore/" style="color: #00a596">rCore</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="color: #03a9f4">操作系统</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/OS/" style="color: #00a596">OS</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/async/" style="color: #00bcd4">async</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/future/" style="color: #ff7d73">future</a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                操作系统
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/OS/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                OS
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/async/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                async
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/future/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                future
-            </a>
-        </span>
-        
         
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/11/8</div>
-            <a href="/2023/11/08/hello-world/">
-                <h3>Hello World</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/Hexo/" style="color: #00a596">Hexo</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <h1 id="正在编写！"><a href="#正在编写！" class="headerlink" title="正在编写！"></a>正在编写！</h1><h2 id="用户态中断"><a href="#用户态中断" class="headerlink" title="用户态中断"></a>用户态中断</h2><p>相关资料</p>
+<p><a target="_blank" rel="noopener" href="https://gallium70.github.io/rv-n-ext-impl/ch1_3_x86_uintr.html">x86 用户态中断 - Risc-V Extension N Implementation (gallium70.github.io)</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/499388903">用户态中断 - 知乎 (zhihu.com)</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/414262726">新CPU特性 - User space interrupt - 知乎 (zhihu.com)</a><br><a target="_blank" rel="noopener" href="https://0x10.sh/user-interrupt">0x10.sh&#x2F;user-interrupt</a></p>
+<h2 id="CPU硬件对并发的支持"><a href="#CPU硬件对并发的支持" class="headerlink" title="CPU硬件对并发的支持"></a>CPU硬件对并发的支持</h2><p>中断可以完全由软件来做吗？</p>
+<p>轮询，硬件怎么做，为什么硬件做效率更高？</p>
+<p>​	</p>
+<p>有用户态中断之前，程序死循环了，怎么让它停下来。Ctrl + C是怎么做到的</p>
+<p>信号</p>
+<h2 id="操作系统对并发的支持"><a href="#操作系统对并发的支持" class="headerlink" title="操作系统对并发的支持"></a>操作系统对并发的支持</h2><p>待添加</p>
+<h2 id="Rust-语言对并发的支持"><a href="#Rust-语言对并发的支持" class="headerlink" title="Rust 语言对并发的支持"></a>Rust 语言对并发的支持</h2><h2 id="异步操作系统"><a href="#异步操作系统" class="headerlink" title="异步操作系统"></a>异步操作系统</h2><p>进程地址空间独立。存有页表切换开销</p>
+<p>线程有独立的堆栈，切换时保存和恢复全部的寄存器。</p>
+<p>内核与用户线程不在相同的地址空间，用户线程只有用户栈，内核线程只有线程栈。</p>
+
     </div>
+    
+    
+    
+    
+    
+    
     
 </div>
 
@@ -321,6 +292,12 @@
 
 
        
+
+
+
+        
+        
+
 
 
 
