@@ -184,17 +184,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/OS/" style="color: #ff7d73">OS</a>
+                <a href="/tags/OS/" style="color: #03a9f4">OS</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/async/" style="color: #00a596">async</a>
+                <a href="/tags/async/" style="color: #ffa2c4">async</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/future/" style="color: #ffa2c4">future</a>
+                <a href="/tags/future/" style="color: #00bcd4">future</a>
             </span>
             
         </span>
@@ -202,8 +202,69 @@
     </div>
     
     <div class="content" v-pre>
-        <h1 id="待添加！！！"><a href="#待添加！！！" class="headerlink" title="待添加！！！"></a>待添加！！！</h1><h2 id="用户态中断"><a href="#用户态中断" class="headerlink" title="用户态中断"></a>用户态中断</h2><p>待添加</p>
-<h2 id="有栈协程与无栈协程"><a href="#有栈协程与无栈协程" class="headerlink" title="有栈协程与无栈协程"></a>有栈协程与无栈协程</h2><h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2>
+        <h2 id="内核态下和用户态下的线程"><a href="#内核态下和用户态下的线程" class="headerlink" title="内核态下和用户态下的线程"></a>内核态下和用户态下的线程</h2><p>进程地址空间独立。存有页表切换开销。<br>线程有独立的堆栈，切换时保存和恢复全部的寄存器。<br>内核与用户线程不在相同的地址空间，用户线程只有用户栈，内核线程只有线程栈。</p>
+<p>相关资料：</p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2166948">线程用户态和内核态-腾讯云开发者社区</a></p>
+<h2 id="有栈协程与无栈协程"><a href="#有栈协程与无栈协程" class="headerlink" title="有栈协程与无栈协程"></a>有栈协程与无栈协程</h2><h3 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h3><p>协程是一种比线程更加轻量级的存在，一个线程可以有多个协程。<strong>当线程内的某一个协程运行时，其它协程必须挂起。</strong>由于协程切换是在线程内完成的，涉及到的资源比较少。可以简单理解为只是切换了寄存器和协程栈的内容。这样代价就非常小。</p>
+<p>和传统的线程不同的是：线程是抢占式执行，当发生系统调用或者中断的时候，交由OS调度执行；而协程是通过yield 主动让出 CPU 所有权，切换到其他协程执行。</p>
+<p>个人理解：</p>
+<p>协程也有多种实现方式，如生成器，async&#x2F;await等。</p>
+<p>在有大量IO操作业务的情况下，我们采用协程替换线程，可以到达很好的效果，一是降低了系统内存，二是减少了系统切换开销，因此系统的性能也会提升。</p>
+<p>在协程中尽量不要调用阻塞IO的方法，比如打印，读取文件，Socket接口等，除非改为异步调用的方式，并且协程只有在IO密集型的任务中才会发挥作用。</p>
+<p><strong>协程只有和异步IO结合起来才能发挥出最大的威力。</strong></p>
+<p>相关资料：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_48475611/article/details/114001159">协程是什么？怎么来的？它有什么作用？_协程的作用</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1916705">什么是协程？-腾讯云开发者社区</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/172471249">什么是协程？</a></p>
+<h3 id="有栈协程"><a href="#有栈协程" class="headerlink" title="有栈协程"></a>有栈协程</h3><p>有栈协程就是一种用户态线程</p>
+<p>在 python, Golang 中就有这样的实现。</p>
+<p>相关资料：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/94018082">从头到尾理解有栈协程实现原理</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/623960059">手把手教你实现有栈协程和协程调度器</a></p>
+<h3 id="无栈协程"><a href="#无栈协程" class="headerlink" title="无栈协程"></a>无栈协程</h3><p><code>stackless</code> 的 <code>coroutine</code></p>
+<p>无栈协程是一种特殊类型的协程，它不需要为每个协程分配一个独立的栈空间。这种设计可以大大减少内存使用，使得可以创建大量的协程。</p>
+<p>无栈协程的实现主要基于状态机（state machine）的概念。无栈协程的本质就是在另一个角度去看问题，即同一协程协程的切换本质不过是指令指针寄存器的改变。无栈协程常常使用生成器来实现，生成器只负责生成数据。</p>
+<p>无栈协程的优点是内存使用更加高效，可以创建大量的协程。但是，由于无栈协程没有自己的栈，所以它们不能直接调用其他函数。这就意味着无栈协程需要使用特殊的编程技巧，如状态机，来实现复杂的逻辑。</p>
+<p>在 JavaScript 中的 Promise, 以及 async&#x2F;await 可以实现<strong>看起来像</strong>无栈协程的行为。</p>
+<p>无栈协程C++<strong>实现</strong>：</p>
+<pre><code class="C++">#include &lt;iostream&gt;
+
+void coro_func() &#123;
+    static int state = 0;
+    switch(state) &#123;
+        case 0: goto LABEL0;
+        case 1: goto LABEL1;
+        case 2: goto LABEL2;
+    &#125;
+    LABEL0:
+    for(;;) &#123;
+        state = 1;
+        return;
+        LABEL1:
+        state = 2;
+        std::cout &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; std::endl;
+        return;
+        LABEL2:
+    &#125;
+&#125;
+
+int main() &#123;
+    for(int i = 0; i &lt; 10; ++i) &#123;
+        coro_func();
+    &#125;
+&#125;
+</code></pre>
+<p>注意存在一个无限循环进行轮询的，后续可以考虑去掉</p>
+<p>相关资料：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/347445164">浅谈有栈协程与无栈协程</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/411834453">如何在C++17中实现stackless coroutine以及相关的任务调度器</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/538063010">c&#x2F;c++ 无栈协程原理是什么, 该如何实现? </a></p>
+<h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2><h4 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h4><p>管道：父进程创建管道，得到两个文件描述符指向管道的两端。父进程fork出子进程，子进程也有两个文件描述符指向同一管道。父进程关闭读端，子进程关闭写端，因为管道只支持单向通信。父进程可以往管道里写，子进程可以从管道里读，管道是用环形队列实现的，数据从写端流入从读端流出，这样就实现了进程间通信。</p>
+<p>队列：消息队列通过名字字面意思理解就是队列排队-和平常超市买东西排队付款一样结构，消息队列与FIFO很相似，都是一个队列结构，都可以有多个进程往队列里面写信息，多个进程从队列中读取信息。但FIFO需要读、写的两端事先都打开，才能够开始信息传递工作。而消息队列可以事先往队列中写信息，需要时再打开读取信息。</p>
+<p>信号：信号是一种事件通知机制，当接收到该信号的进程会执行相应的操作。信号的产生由硬件产生，如从键盘输入Ctrl+C可以终止当前进程。由其他进程发送，例如，在shell进程下，使用命令kill -信号值 PID。异常，当进程异常时发送信号。</p>
+<p>共享内存：共享内存是我们首先在内核建立了一个对象（也就是缓存区），然后我们将这个缓存区映射到进程的内存空间上。所以我们并不是在用户开辟一块内存来实现共享。而是共享的是内核区域的内存，我们是将内核的这块内存映射出来，从而实现我们在用户空间对内核空间的内存操作4。</p>
+<p>套接字：套接字是操作系统内核的一个数据结构，它是网络中节点进行相互通信的门户。网络编程实际上也可以称作套接字编程。套接字有3种类型：流式套接字，即TCP套接字，用SOCK_STREAM表示；数据报套接字，即UDP套接字（或称无连接套接字），用SOCK_DGRAM表示；原始套接字，用SOCK_RAM表示。服务端和客户端通过两个套接字通信就简单了，一端向send buffer写数据，该buffer的数据会通过已经建立好的TCP连接发送到另一端的recv buffer，于是另一端只需从recv buffer中读数据即可实现不同计算机上的进程间通信。</p>
+<p>管道：在管道通信中，如果一个进程在读取管道但管道中没有数据，或者一个进程在写入管道但管道已满，那么这个进程就会被阻塞。如果我们使用异步操作，那么这个进程就可以在等待数据的同时做其他的事情，提高了效率。</p>
+<p>消息队列：在消息队列中，一个进程在发送消息后需要等待接收进程接收消息。如果我们使用异步操作，那么发送进程在发送消息后就可以立即返回，不需要等待接收进程接收消息，这样就可以提高发送进程的效率。</p>
+<p>共享内存：在共享内存中，一个进程在读写共享内存时需要等待其他进程释放对共享内存的访问权。如果我们使用异步操作，那么这个进程就可以在等待的同时做其他的事情，提高了效率。</p>
+<p>信号：在信号通信中，一个进程在发送信号后需要等待接收进程处理信号。如果我们使用异步操作，那么发送进程在发送信号后就可以立即返回，不需要等待接收进程处理信号，这样就可以提高发送进程的效率。</p>
+<p>套接字：在套接字通信中，一个进程在发送数据后需要等待接收进程接收数据。如果我们使用异步操作，那么发送进程在发送数据后就可以立即返回，不需要等待接收进程接收数据，这样就可以提高发送进程的效率。</p>
+
     </div>
     
     
