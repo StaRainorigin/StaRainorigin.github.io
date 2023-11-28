@@ -174,12 +174,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="color: #00a596">操作系统</a>
+                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="color: #03a9f4">操作系统</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="color: #ffa2c4">期末复习</a>
+                <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="color: #ff7d73">期末复习</a>
             </span>
             
         </span>
@@ -295,7 +295,7 @@ X = R2
 </ol>
 <p>互斥：一组进程中的一个或多个程序段，因<u>共享某一共有资源</u>而导致它们必须以一个<u>不许交叉执行</u>的单位执行，即不允许两个以上的共享该资源的并发进程<u>同时进入临界区</u>。</p>
 <p>同步：异步环境下的一组并发进程因直接制约互相发送消息而进行互相合作、互相等待,各进程按一定的速度执行的过程。</p>
-<pre><code class="clike">int in=0, out=0;
+<pre><code class="c">int in=0, out=0;
 item buffer[n];		//item类型，自己定义的
 semaphore mutex=1, empty=n, full=0;		//semaphore是信号类型，自己定义的
 
