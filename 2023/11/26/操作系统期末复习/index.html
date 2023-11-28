@@ -179,7 +179,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="color: #ff7d73">期末复习</a>
+                <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="color: #ffa2c4">期末复习</a>
             </span>
             
         </span>
@@ -343,7 +343,7 @@ void V(semaphore S) &#123;
 </ol>
 <p><strong>条件：</strong><br>(1) 只有拿到两支筷子时，哲学家才能吃饭。<br>(2) 如果筷子已在他人手上，则该哲学家必须等待到他人吃完之后才 能拿到筷子。<br>(3) 任一哲学家在自己未拿到两支筷子吃饭之前，决不放下自己手中 的筷子。 </p>
 <p><strong>试解答以下问题:</strong><br>(1) 描述一个保证不会出现两个邻座同时要求吃饭的通信算法。 </p>
-<pre><code class="clike">//信号量 c[0]~c[4],初始值均为 1,分别表示 i 号筷子被拿 (i=0,1,2,3,4)
+<pre><code class="c">//信号量 c[0]~c[4],初始值均为 1,分别表示 i 号筷子被拿 (i=0,1,2,3,4)
 //int c[5] = &#123;1, 1, 1, 1, 1&#125;;
 
 void send(int i) &#123;
@@ -355,7 +355,7 @@ void send(int i) &#123;
 &#125;
 </code></pre>
 <p>(2) 描述一个既没有两邻座同时吃饭，又没有人饿死（永远拿不到 筷子）的算法。在什么情况下，5 个哲学家全部吃不上饭？</p>
-<pre><code class="clike">//信号量 c[0]~c[4],初始值均为 1,分别表示 i 号筷子被拿 (i=0,1,2,3,4)
+<pre><code class="c">//信号量 c[0]~c[4],初始值均为 1,分别表示 i 号筷子被拿 (i=0,1,2,3,4)
 //int c[5] = &#123;1, 1, 1, 1, 1&#125;;
 
 void send(int i) &#123;
@@ -377,7 +377,7 @@ void send(int i) &#123;
 <ol start="8">
 <li><strong>面包师有很多面包，由 n 个销售人员推销。每个顾客进店后去一个号，并且等待叫号，当一个销售人员空闲下来时，就叫下一个号。试设计一个销售人员和顾客同步算法。</strong></li>
 </ol>
-<pre><code class="clike">int i=0, j=0;	//区号值，叫号值
+<pre><code class="c">int i=0, j=0;	//区号值，叫号值
 semaphore mutex_i=1, mutex_j=1;	
 
 consumer() &#123;		//顾客买完就走，所以不用while循环
@@ -408,7 +408,7 @@ seller() &#123;			//销售人员在工作时间内一只销售，加一个while
 <ol start="9">
 <li><strong>工厂有两个生产车间和一个装配车间，两个生产车间分别生产 A、B 两种零件，装配车间的任务是把 A、B 两种零件组装成产品，两个生产车间每生产一个零件后都要分别把它们送到专配车间的货架 F1、F2上，F1 存放零件 A，F2 存放零件B，F1和F2 的容量均可以存放 10 个零件，袋配工人每次从货架上取一个零件 A 和一个零件 B 后组装成产品，请用 P、V 操作进行正确管理。</strong></li>
 </ol>
-<pre><code class="clike">int empty1=10, full1=0, mutex1=1;	//对应货架F1
+<pre><code class="c">int empty1=10, full1=0, mutex1=1;	//对应货架F1
 int empty2=10, full2=0, mutex2=1;	//对应货架F2
 //mutex指的是对货架的操控权
 
@@ -455,7 +455,7 @@ consumer() &#123;
 <p>A 和 B 两人的操作过程描述如下:</p>
 <p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231129000211277.png" alt="image-20231129000211277"></p>
 <p>当信箱不为空时，辩论者才能从信箱中取邮件，否则等待。当信箱不满时，辩论者才能将新邮件放入信箱，否则等待。请添加必要的信号量和P、V(或wait、signal)操作，以实现上述过程的同步。要求写出完整过程，并说明信号量的含义和初值。</p>
-<pre><code class="clike">int empty_a=M-x, full_a=x, mutex_a=1;	
+<pre><code class="c">int empty_a=M-x, full_a=x, mutex_a=1;	
 int empty_b=N-y, full_b=y, mutex_b=1;	
 
 coA() &#123;
