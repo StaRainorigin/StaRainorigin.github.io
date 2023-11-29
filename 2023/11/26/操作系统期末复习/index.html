@@ -174,12 +174,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="color: #03a9f4">操作系统</a>
+                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="color: #ff7d73">操作系统</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="color: #ffa2c4">期末复习</a>
+                <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" style="color: #00bcd4">期末复习</a>
             </span>
             
         </span>
@@ -377,29 +377,29 @@ void send(int i) &#123;
 <ol start="8">
 <li><strong>面包师有很多面包，由 n 个销售人员推销。每个顾客进店后去一个号，并且等待叫号，当一个销售人员空闲下来时，就叫下一个号。试设计一个销售人员和顾客同步算法。</strong></li>
 </ol>
-<pre><code class="c">int i=0, j=0;	//区号值，叫号值
-semaphore mutex_i=1, mutex_j=1;	
+<pre><code class="c">int take=0, call=0;	//取号值，叫号值
+semaphore mutex_take=1, mutex_call=1;	
 
 consumer() &#123;		//顾客买完就走，所以不用while循环
     进入面包店;
-    P(mutex_i);		//上锁
-    取号i;
-    i++;
-    V(mutex_i);		//解锁
+    P(mutex_take);		//上锁
+    取号;
+    take++;
+    V(mutex_take);		//解锁
     等待叫号i并购买面包;
 &#125;
 
 seller() &#123;			//销售人员在工作时间内一只销售，加一个while
     while(True) &#123;
-        P(mutex_j);		//上锁
+        P(mutex_call);		//上锁
         
-        if (j&lt;i) &#123;		//确保当前叫的号已经被取到了。
+        if (call&lt;take) &#123;		//确保当前叫的号已经被取出。
             叫号;
-            j++;
-            V(mutex_j);	//解锁
+            call++;
+            V(mutex_call);	//解锁
             销售面包;
         &#125; else &#123;
-            V(mutex_j);	//解锁, 每次while只会解锁一次
+            V(mutex_call);	//解锁, 每次while只会解锁一次
             休息片刻;
         &#125;
     &#125;
