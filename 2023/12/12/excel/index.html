@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>Excel函数使用 | ⭐星雨起源⭐</title>
+        <meta name="author" content="海画沙夢w" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>⭐星雨起源⭐</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;⭐星雨起源⭐</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>Excel函数使用</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/12
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Excel/" style="color: #ff7d73">Excel</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>函数的形式：<code>=函数名(参数们)</code></p>
+<p>函数存在的本意其实是为了<u><strong>更方便</strong>的处理数据</u>，<br>如下面的场景下，第一行用函数求了各项目的总和，如果不用函数，下面的每个数据经过修改，这个总和我们都要重新算一遍，如果用函数，这个总和就不用动了，因为下面的值改变过后，总和会自己重新求一边。</p>
+<p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231212183927387.png" alt="image-20231212183927387"></p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>我们学的编程语言里面也有函数，差不多的东西，我就简单说一下我自己的理解吧。<br>有些概念是我自己编的，目的是方便理解</p>
+<h3 id="关于函数"><a href="#关于函数" class="headerlink" title="关于函数"></a>关于函数</h3><p>跟数学上的函数不同，函数像是一个<u>进行加工的工厂，你给它原材料，它给你成品</u>。然后工厂有不同的类型，有编织衣服的有做不锈钢盆的……<br>类比函数的话，参数就是原材料，函数名就是它是一个加工什么的工厂，函数生成的结果就是成品。<br>这么看<code>=编织(毛线, 针, ...)</code>，就是 把毛线，针给给编织工厂，工厂最终会给你做出衣服来。</p>
+<h3 id="关于参数"><a href="#关于参数" class="headerlink" title="关于参数"></a>关于参数</h3><p>参数的&#x3D;&#x3D;数量&#x3D;&#x3D;可以不止一个，比如 <code>编织</code> 函数，就需要 <code>毛球，针，...</code><br>参数的&#x3D;&#x3D;数值&#x3D;&#x3D;可以不一样，如 <code>毛线</code>， 如果给它<u>黄色毛线</u> ，就会织出<u>黄色衣服</u>，给<u>蓝色毛线</u>，就会织出<u>蓝色衣服</u>。</p>
+<p>excel中，一般参数都是写某个单元格，然后传入的是单元格里面的内容<br>你们书上写的函数中的参数，一个参数对应的值<u>可能是一个值，也可能是多个值</u>，但是都算作<strong>一个参数</strong>，参数之间用逗号 ‘,’ 分隔开<br>你输入单元格，比如: “A1、E4、B5”, 这种就是把&#x3D;&#x3D;一个&#x3D;&#x3D;单元格里面的值传入，</p>
+<p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231212213905130.png" alt="image-20231212213905130"></p>
+<p>如果是这种形式 “A1: A12 、A3: G3”, 这种就是传入&#x3D;&#x3D;多个&#x3D;&#x3D;单元格里的值，如”A1: A12”，就是指的竖着一列中的几个值，”A3: G3”就是横着一行中的几个值。它们虽然是多个数，但是都算作&#x3D;&#x3D;一个参数&#x3D;&#x3D;</p>
+<p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231212213844967.png" alt="image-20231212213844967"></p>
+<h3 id="关于函数结果"><a href="#关于函数结果" class="headerlink" title="关于函数结果"></a>关于函数结果</h3><p> <code>=函数名(参数们)</code><br>你在一个excel单元格里输入一个函数，不管你用的什么函数，传入的什么参数，最后都会生成一个或一些值，这就是函数产生的结果。<br>函数产生的结果也可以当作参数传入其他函数，初学者也许不太好懂？下面有解释</p>
+<h4 id="函数嵌套"><a href="#函数嵌套" class="headerlink" title="函数嵌套"></a>函数嵌套</h4><p>不要被名字唬到了<br>假如你在一个单元格中输入<code>=编织(毛线, 针, ...)</code>，那么单元格中最终显示的就是一件<code>衣服</code>。你把这个单元格直接当成一件衣服就好了，<br>假如说再有个函数叫 <code>=销售(衣服)</code>, 此时这个单元格的值 <code>衣服</code> 虽然是通过 <code>编织</code> 函数得出来的，但是它也是一个值，跟你直接在单元格中输入这件 衣服 是一样的，所以它也可以作为 <code>=销售(衣服)</code> 的参数传入到函数中去。</p>
+<h2 id="插入函数"><a href="#插入函数" class="headerlink" title="插入函数"></a>插入函数</h2><p>其实就是在一个单元格中输入 <code>=函数名(参数们)</code> ，假如你想在一个单元格里面求和，就在这个单元格中输入 <code>=SUM(求和范围)</code> 。你们书上写的<code>Shift+F3</code>，或者是编辑栏上的点图标的方式，本质上也会生成这么个东西，只是都变成用鼠标点击操控，方便一些没学过计算机编程语言的人理解这些东西，你用你喜欢的方式就好。</p>
+<h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><p>我看你们书上有 <code>说明</code> 这一栏，你可以，其中对参数进行了详细的说明</p>
+<h3 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h3><p>就是做一些数学计算的时候用的，取整、四舍五入、求和、加减乘除，只不过加减乘除可以直接用 <code>+ - * /</code> 符号完成，这里除法也给了个函数，我没深入研究跟直接用 <code>/</code> 符号有什么区别，我用着都一样</p>
+<p><code>SUMIF</code>函数后面再说</p>
+<h3 id="统计函数"><a href="#统计函数" class="headerlink" title="统计函数"></a>统计函数</h3><p>就是做一些关于统计方面的事情用的，比如 计数，平均值，最大最小值等，你们如果学统计学就会发现统计学里面喜欢研究的就是这些东西，还有方差之类的。</p>
+<p><code>COUNTIF</code> 后面再说</p>
+<h3 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h3><p>就是一些处理日期相关内容的函数</p>
+<p>其中 <code>DATE</code> 函数就是你输入年月日的数值，它给你生成一种 规范了书写格式 的日期，这么做的原因是<br>没有人工智能的情况下，计算机对文字的处理比较笨，它只能处理特定格式的数据，这个 <code>DATE</code> 函数其实就是为了把日期转换成计算机能处理的格式，方便后面能把这个数据放在其他函数(比如<code>MONTH</code>) 里面使用</p>
+<h2 id="逻辑函数"><a href="#逻辑函数" class="headerlink" title="逻辑函数"></a>逻辑函数</h2><p>一些逻辑学相关的函数，真假、IF、与或非<br>然后我觉得主要是还是 IF，你可以以 IF 为”骨架”来理解这部分，其他的”真假、与或非”，都是为这个 IF 服务的</p>
+<h3 id="真与假"><a href="#真与假" class="headerlink" title="真与假"></a>真与假</h3><p>真假就跟真命题假命题一样</p>
+<p>真：如 2&gt;1, 4&lt;5, 5&#x3D;5，这些条件是满足的，就是<code>真</code>的，我们叫<code>TRUE</code><br>假：如 2&lt;1, 4&gt;5, 5≠5，这些条件都不满足，就是<code>假</code>的，我们叫<code>FALSE</code></p>
+<p>就跟分类讨论一样，如果有一个条件，<code>x&gt;5</code>，<code>x</code> 的值可能随着我们的数据一直变化，如果 <code>x</code> 是”6, 10, 20, 100” 这种数值, 它就是 <code>真</code> ，如果 <code>x</code> 是 “-1, 0, 1, 5” 这种数值，那它的输出就是 <code>假</code>。</p>
+<p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231212214351172.png" alt="image-20231212214351172"></p>
+<h3 id="IF-函数"><a href="#IF-函数" class="headerlink" title="IF 函数"></a>IF 函数</h3><p>我先说这个玩意儿怎么理解，<code>IF(条件, 值1, 值2)</code><br>根据我们一开始对于函数的理解，这个玩意儿也是传入一些东西，然后输出结果，<br>只是如果<code>IF(条件, 值1, 值2)</code>中的 <code>条件</code> 参数，是满足的，也就是 <code>真</code> 的时候，这个函数输出的结果就是 <code>值1</code>, 如果不满足就是 <code>值2</code>, </p>
+<p>如有两个单元格 a 和 b, 假如 a 中是我们学校的分数, b 是一个函数：<code>IF(x&gt;90, &#39;赢麻了&#39;, &#39;输麻了&#39;) </code>,<br>在这个场景下，如果 a 中的值是比90大的，那么 y 中的值就是 <code>&#39;赢麻了&#39;</code>, 当然如果 a 中的值小于等于90, 那么 b 中的值就会变为 <code>&#39;输麻了&#39;</code>, </p>
+<p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231212214547865.png" alt="image-20231212214547865"></p>
+<p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231212214604697.png" alt="image-20231212214604697"></p>
+<p>更贴近你们学习的内容的例子：<code>IF(A1&gt;3, B1-B2, B1+B2)</code> 的意思就是，如果 “单元格 <code>A1</code> 中的值 比 3 大”，那么结果就是 “B1-B2”, 如果 “单元格 <code>A1</code> 中的值 比 3 小或相等”, 那么结果就是 “B1+B2”</p>
+<p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231212214748648.png" alt="image-20231212214748648"></p>
+<p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231212214803538.png" alt="image-20231212214803538"></p>
+<p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231212214816973.png" alt="image-20231212214816973"></p>
+<p>也许你可以理解到，它是用于针对不同情况输出不同的值，尤其是”如果就，如果就”，”当……时，当……时”比如：<br>“如果是男生就输出boy，如果是女生就输出girl”</p>
+<h3 id="IF-函数嵌套"><a href="#IF-函数嵌套" class="headerlink" title="IF 函数嵌套"></a>IF 函数嵌套</h3><p>我们之前说，函数也可以作为参数，<code>IF(条件, 值1, 值2)</code><br>假如有函数 <code>a(参数)</code> 和 <code>b(参数)</code>, 我其实可以写成这样, <code>IF(条件, 函数a, 函数b)</code>, 理解起来也很简单，就是条件&#x3D;&#x3D;满足&#x3D;&#x3D;(为<code>真</code>，也就是<code>TRUE</code>)时，单元格中的值就是 <code>函数a</code> 执行后的值，如果条件不满足(为<code>假</code>, 也就是<code>FALSE</code>)时，单元格中的值就是 <code>函数b</code> 执行后的值。</p>
+<p>如: <code>IF(A1&gt;10, SUM(B1:B10), 0)</code> 如果 单元格 <code>A1</code> 中的值比 10 大，那么结果就是 B1到B10 的和，如果 <code>A1</code> 的值不必10大，那么结果就是 0</p>
+<p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231212214922732.png" alt="image-20231212214922732"></p>
+<p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231212214942136.png" alt="image-20231212214942136"></p>
+<p>还可以更进一步，<code>IF(条件, 值1, 值2)</code>  中的条件也可以存在函数 </p>
+<p>如: <code>IF(COUNT(A1:A20)&gt;10, SUM(A1:A20), 0)</code> : 如果 A1到A20 中有值的单元格数量大于10，那么输出它们的和，如果不满足条件，就输出0</p>
+<h3 id="与或非"><a href="#与或非" class="headerlink" title="与或非"></a>与或非</h3><p>我看你们课本上只写了一个 <code>AND</code> ，我觉得一块说一下比较好理解？<br>不知道你们老师怎么说的这块地方，没有做我这种扩充的话，我多写的看看就行。</p>
+<p>当你有<strong>多个条件需要判断</strong>时，如：<br>“18岁男生是成年男性”，就是 “年龄大于等于18 且 性别” ，这两个条件&#x3D;&#x3D;都满足&#x3D;&#x3D;才能是 “成年男性”, 有一个不满足都不行，这个就是 “与”，也就是 <code>AND</code> 函数<br>举例子:：A1是装有<u>年龄</u>的单元格，A2是装有<u>性别</u>的单元格，<code>AND(A1&gt;18, A2=&quot;男&quot;)</code>，<br>A1的值为20(满足)，A2为”男”(满足)时，结果就是TRUE，  A1的值为10(不满足)，A2为”男”(满足)时，结果就是FALSE</p>
+<p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231212215232931.png" alt="image-20231212215232931"></p>
+<p><img src="https://starain-1252568110.cos.ap-beijing.myqcloud.com/blog/image-20231212215338132.png" alt="image-20231212215338132"></p>
+<p>“某某某与狗不得入内”，就是 “某某某 或 狗” 都不得入内，这两个条件 &#x3D;&#x3D;只要满足一个&#x3D;&#x3D; 就 “不得入内”, 有一个满足就可以，这个就是 “或”，也就是 <code>OR</code> 函数<br>举例子：A1是姓名，A2是是否为狗, 则可以写成 <code>OR(A1=&quot;某某某&quot;, A2=&quot;狗&quot;)</code></p>
+<p>“非” 就很简单了，<code>NOT</code>函数，<code>NOT(TRUE)</code> 就是 FALSE，<code>NOT(FALSE)</code> 就是 TRUE</p>
+<p>当用 IF 时需要有多个条件进行判断时使用，如 “你是满22岁的男性我就跟你结婚，否则就分手！”<br>剖析一下，<code>IF(条件, 值1, 值2)</code>, 条件为 “年龄&gt;&#x3D;22”且”性别为男”，如果都满足满足，就是 <code>值1</code>，这里则为  <code>结婚函数</code>，如果有一个不满足，就是<code>值2</code>，这里是 <code>分手函数</code>，因为两个条件都需要满足，我们需要使用<code>AND</code>作为 IF 中的 <code>条件</code> 根据分析我们可以写成：<br>A1是岁数，A2是性别，假如有结婚和分手的函数<code>IF(AND(A1&gt;=22, A2=&quot;男&quot;), 结婚(), 分手())</code></p>
+<h4 id="之前没说的-SUMIF-和-COUNTIF"><a href="#之前没说的-SUMIF-和-COUNTIF" class="headerlink" title="之前没说的 SUMIF 和 COUNTIF"></a>之前没说的 <code>SUMIF</code> 和 <code>COUNTIF</code></h4><p>这俩哥们的作用跟 <code>SUM</code>, 和 <code>COUNT</code> 的作用一样，只不过就是 “如果满足条件才会参与到求和中” 和 “如果满足条件才会被计数”，</p>
+<p>如(A1:A5)是一串数：<code>-1, 0, 1, 2, 4</code></p>
+<p>对于 <code>=SUM(A1:A5)</code> 结果就是 <code>6</code> (-1+0+1+2+4)<br>对于 <code>=SUMIF(A1:A5, &quot;&gt;0&quot;)</code> 的结果就是 <code>7</code> (1+2+4) </p>
+<p>对于 <code>=COUNT(A1:A5)</code> 的结果就是 <code>5</code><br>对于 <code>=COUNTIF(A1:A5, &quot;&gt;0&quot;)</code> 的结果就是 <code> 3</code></p>
+<h2 id="文本函数"><a href="#文本函数" class="headerlink" title="文本函数"></a>文本函数</h2><p>就是处理文字的，就是对一段文字进行加工的。如 得到这段文字的长度、替换内容、重复文本、截取其中一段内容、转换大小写</p>
+<h2 id="查找函数"><a href="#查找函数" class="headerlink" title="查找函数"></a>查找函数</h2><p>挺抽象的……真的会考吗？后面再说吧</p>
+<h2 id="财务函数"><a href="#财务函数" class="headerlink" title="财务函数"></a>财务函数</h2><p>没学过金融……从小就不会管理财务，我妈小时候让我拿1块钱去买零食，我去商店问了一圈都是5毛的，我哭着回来找我妈说没有卖1块的零食</p>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 ⭐星雨起源⭐
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;海画沙夢w
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+
+
+
+        <script src="/js/main.js">  </script>
+        <script>
+            console.info("Welcome to Argvchs' blog!");
+            if (!window.hasOwnProperty("ontouchstart")) {
+                let html = '<canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas><script src="https://static-argvchs.netlify.app/js/fireworks.min.js"><\/script>';
+                document.body.append(document.createRange().createContextualFragment(html));
+            }
+        </script>
+
+
+        <!-- 鼠标点击特效 -->
+        <canvas
+            id="fireworks"
+            style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"
+        ></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+
+
+
+        <!-- 鼠标指针特效 -->
+        <div id="cursor"></div>
+        <link rel="stylesheet" href="/css/cursor.min.css" />
+        <script src="/js/cursor.min.js"></script>
+
+
+
+        <!-- 流星背景特效 -->
+        <canvas
+            id="background"
+            style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -1"
+        ></canvas>
+        <script src="/js/background.min.js"></script>
+
+
+
+
+       
+
+
+
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="StaRainorigin/StaRainorigin.github.io"
+    data-repo-id="R_kgDOH6wiAg"
+    data-category="General"
+    data-category-id="DIC_kwDOH6wiAs4CY_KG"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="https://static-argvchs.netlify.app/css/giscus.css"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+        
+    </body>
+</html>
