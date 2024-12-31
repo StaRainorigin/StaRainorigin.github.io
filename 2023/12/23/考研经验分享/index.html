@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>2025考研408考研经验分享 | ⭐星雨起源⭐</title>
+        <meta name="author" content="海画沙夢w" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>⭐星雨起源⭐</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;⭐星雨起源⭐</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>2025考研408考研经验分享</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/23
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E8%80%83%E7%A0%94/" style="color: #ff7d73">考研</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="考研内容"><a href="#考研内容" class="headerlink" title="考研内容"></a>考研内容</h1><h2 id="第一天-–-政治"><a href="#第一天-–-政治" class="headerlink" title="第一天 – 政治"></a>第一天 – 政治</h2><ul>
+<li>分值: 100</li>
+<li>学习内容: 马原 + 毛中特 + 新思想 + 史纲 + 思修 + 时政</li>
+<li>试卷题型(括号内是分值)<ul>
+<li>选择题: 单选16(1) + 不定项17(2)</li>
+<li>分析题: 5个大题: 马原(10) + 新思想(10) + 史纲(10) + 思修(10) + 时政(10)</li>
+</ul>
+</li>
+</ul>
+<h2 id="第一天-–-英语"><a href="#第一天-–-英语" class="headerlink" title="第一天 – 英语"></a>第一天 – 英语</h2><ul>
+<li>分值: 100</li>
+<li>内容: 考研单词6000</li>
+<li>英语二试卷题型(括号内是分值)<ul>
+<li>选择题: 完型20(0.5) + 阅读5×4(2) + “新”题型5(2)</li>
+<li>非选择题: 短文翻译(15) + 应用文写作(10) + 图表作文写作(15)</li>
+</ul>
+</li>
+<li>英语一试卷题型<ul>
+<li>选择题: 完型20(0.5) + 阅读5×4(2) + “新”题型5(2)</li>
+<li>非选择题</li>
+<li>非选择题: 句子翻译5(5x2&#x3D;10) + 应用文写作(10) + 图画作文写作(20)</li>
+</ul>
+</li>
+</ul>
+<h2 id="第二天-–-数学"><a href="#第二天-–-数学" class="headerlink" title="第二天 – 数学"></a>第二天 – 数学</h2><ul>
+<li><p>分值: 150</p>
+</li>
+<li><p>数学一内容: 高数(无经济学)86分+线代32分+概率论32分</p>
+<ul>
+<li>高数<ul>
+<li>函数与极限</li>
+<li>数列与极限(难)</li>
+<li>一元微分学概念+计算+应用(极值拐点, 中值定理)+物理应用</li>
+<li>一元积分学概念+计算+应用(面积等, 中值定理)+物理应用</li>
+<li>多元函数微分学</li>
+<li>二重积分</li>
+<li>微分方程</li>
+<li><strong>无穷级数</strong></li>
+<li><strong>多元函数积分学</strong></li>
+<li><strong>空间解析几何</strong></li>
+</ul>
+</li>
+<li>线代<ul>
+<li>行列式</li>
+<li>矩阵和秩</li>
+<li>向量组</li>
+<li>线性方程组</li>
+<li>特征值和相似</li>
+<li>二次型</li>
+</ul>
+</li>
+<li><strong>概率论</strong><ul>
+<li>没学过不知道</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数学二内容: 高数(无经济学, 无级数, 无空间相关内容)118分 + 线代(无空间相关内容)32分</p>
+<ul>
+<li>高数<ul>
+<li>函数与极限</li>
+<li>数列与极限</li>
+<li>一元微分学概念+计算+应用(极值拐点, 中值定理)+物理应用</li>
+<li>一元积分学概念+计算+应用(面积等, 中值定理)+物理应用</li>
+<li>多元函数微分学</li>
+<li>二重积分</li>
+<li>微分方程</li>
+</ul>
+</li>
+<li>线代<ul>
+<li>行列式</li>
+<li>矩阵和秩</li>
+<li>向量组</li>
+<li>线性方程组</li>
+<li>特征值和相似</li>
+<li>二次型</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数学三内容:</p>
+<ul>
+<li>你们不会考数学三的</li>
+</ul>
+</li>
+</ul>
+<h2 id="第二天-408"><a href="#第二天-408" class="headerlink" title="第二天 - 408"></a>第二天 - 408</h2><ul>
+<li>分值: 150</li>
+<li>40选择(2分) + 7综合题<ul>
+<li>数据结构45分: 11选择 + 1算法题 + 1简答题</li>
+<li>计算机组成原理45分: 11 + 选择 + 2简答题</li>
+<li>操作系统40分: 11选择 + 2简答题</li>
+<li>计算机网络25分: 8选择 + 1简答题</li>
+</ul>
+</li>
+</ul>
+<h1 id="复习流程-参考"><a href="#复习流程-参考" class="headerlink" title="复习流程(参考)"></a>复习流程(参考)</h1><ul>
+<li>时间上的安排只是理想状态下的, 会跟实际情况有些出入, 具体根据自己的情况来安排, 过度在意进度只会徒增焦虑, 只学了80%你就把那80%学好就行了, 你不需要考满分</li>
+</ul>
+<h2 id="408"><a href="#408" class="headerlink" title="408:"></a><strong>408:</strong></h2><p><strong>模拟</strong>时间安排</p>
+<ul>
+<li>12&#x2F;01 - 12&#x2F;21: 空着<ul>
+<li>查缺补漏, 回顾错题等, 自行安排</li>
+</ul>
+</li>
+<li>11&#x2F;01 - 11&#x2F;30: 真题 <ul>
+<li>2天一套</li>
+</ul>
+</li>
+<li>10&#x2F;01 - 10&#x2F;31: 空着<ul>
+<li>做回顾和整理, 查缺补漏</li>
+</ul>
+</li>
+<li>08&#x2F;01 - 9&#x2F;30: 强化  <ul>
+<li>半个月一门</li>
+<li>重点在大题</li>
+</ul>
+</li>
+<li>2&#x2F;01 - 7&#x2F;31: 一轮(4门课一轮: 1.5月&#x2F;门)<ul>
+<li>一轮一般只做选择题, 综合题如果有特殊情况可以自己选择性做一下</li>
+<li>注意最好做一下适当的总结, 后面肯定会忘很多, 所以要做点措施让自己少汪一点</li>
+</ul>
+</li>
+</ul>
+<p><strong>学习内容推荐</strong>(非常主观)</p>
+<ul>
+<li>建议尽量减少视频课时长, 就算内容很全, 看完了你也记不住</li>
+<li>王道的课有点墨迹</li>
+<li>一轮<ul>
+<li>数据结构: b站 白话拆解数据结构(强推)</li>
+<li>计组, 操作系统, 计网: 不太好推荐, 我看的是beokayy, 时间短, 精炼, 重点突出, 缺点是需要花钱买。</li>
+</ul>
+</li>
+<li>二轮<ul>
+<li>王道强化课, b站没有, 看网盘。</li>
+<li>数据结构算法题顺序表题目有比快排好用且好写的办法, 好好想想</li>
+</ul>
+</li>
+</ul>
+<p><strong>需要购买的书籍</strong>(没有标注就是实体或电子版都可以)</p>
+<ul>
+<li>(非必须)高教社408大纲, 应该还没有26, 可以买25, 当年新加内容一般当年都不考</li>
+<li>408四门王道教材(尽量实体)</li>
+<li>408真题</li>
+<li>(非必须)408各机构模拟题, 一般真题就够用了, 再有时间可以看看还没考过的知识点</li>
+</ul>
+<h2 id="其他要说的-很多计算机考研学生是跨考的-或者其他情况-反正大部分情况下代码水平都堪忧-什么语法错误-然后钻牛角尖-还有什麽申请内存不释放…反正数据结构…我相信大家有能力在数据结构代码题上有自己的想法。不要被其他人误导-他们说不定还不如你厉害-有些方法完全就是没必要用-包括王道讲的一部分代码-自己好好想想。"><a href="#其他要说的-很多计算机考研学生是跨考的-或者其他情况-反正大部分情况下代码水平都堪忧-什么语法错误-然后钻牛角尖-还有什麽申请内存不释放…反正数据结构…我相信大家有能力在数据结构代码题上有自己的想法。不要被其他人误导-他们说不定还不如你厉害-有些方法完全就是没必要用-包括王道讲的一部分代码-自己好好想想。" class="headerlink" title="其他要说的- 很多计算机考研学生是跨考的, 或者其他情况, 反正大部分情况下代码水平都堪忧, 什么语法错误, 然后钻牛角尖, 还有什麽申请内存不释放…反正数据结构…我相信大家有能力在数据结构代码题上有自己的想法。不要被其他人误导, 他们说不定还不如你厉害, 有些方法完全就是没必要用, 包括王道讲的一部分代码, 自己好好想想。"></a><strong>其他要说的</strong><br>- 很多计算机考研学生是跨考的, 或者其他情况, 反正大部分情况下代码水平都堪忧, 什么语法错误, 然后钻牛角尖, 还有什麽申请内存不释放…反正数据结构…我相信大家有能力在数据结构代码题上有自己的想法。不要被其他人误导, 他们说不定还不如你厉害, 有些方法完全就是没必要用, 包括王道讲的一部分代码, 自己好好想想。</h2><h2 id="数学"><a href="#数学" class="headerlink" title="数学:"></a><strong>数学:</strong></h2><p><strong>模拟</strong>时间安排</p>
+<ul>
+<li><input disabled="" type="checkbox"> 12&#x2F;01 - 12&#x2F;21: 空着 + 模拟</li>
+<li><input disabled="" type="checkbox"> 11&#x2F;01 - 11&#x2F;30: 模拟</li>
+<li><input disabled="" type="checkbox"> 10&#x2F;01 - 10&#x2F;31: 真题 两天一套</li>
+<li><input disabled="" type="checkbox"> 09&#x2F;01 - 09&#x2F;30: 空着</li>
+<li><input disabled="" type="checkbox"> 07&#x2F;01 - 08&#x2F;31: 强化</li>
+<li><input disabled="" type="checkbox"> none  - 06&#x2F;30: 一轮: 5个月左右(高数3月, 线代1月, 概率论1月)<ul>
+<li>买个练习册一块做着</li>
+<li>建议一轮结束, 复习一下, 然后做做早年真题, 然后根据做题内容回头巩固总结, 早年真题指的是2010之前, 有时间多做点。近年真题2017(数二), 2021(数二)比较简单, 当然也不一定非要做简单的, 反正是建议提早熟悉一下真题</li>
+</ul>
+</li>
+</ul>
+<h2 id="避坑-b站各种-xxxx哥-各种卖课的"><a href="#避坑-b站各种-xxxx哥-各种卖课的" class="headerlink" title="避坑- b站各种 xxxx哥- 各种卖课的"></a><strong>避坑</strong><br>- b站各种 xxxx哥<br>- 各种卖课的</h2><p><strong>学习内容推荐</strong></p>
+<ul>
+<li>建议 主+辅 的形式, 且尽量减少视频课时间, 多做题和总结, 太长了你看不下去, 但不是让你不看视频课<ul>
+<li>主: 考研名师, 主打学习基本知识点, 顺便把每一章节的例题, 课后题, 练习册一块做<ul>
+<li>我只说一下张宇老师, 张宇老师是一个非常有才华的老师。我说一下优点和缺点: 优点是能帮你拔高, 能帮你从120变成140, 内容多, ; 缺点是你首先得能拔高, 你首先得能到120。张宇老师就是有一种想把他知道的所有的知识都塞给你的感觉, 但是其实你能理解和吸收的就那么多, 他说得太多了, 一战很难抓住重点, 大部分知识时间性价比也不高, 这种情况下他视频课时间还贼长(可能是武的两倍)</li>
+</ul>
+</li>
+<li>辅: 一些小up, 主打跟着练习做题技巧、思路等。还有一些考研名师讲不清楚的地方, 可以听一些b站up的讲解。下面是推荐, b站均能搜到。注意, 每个up每年都有每年的状态, 这些up25考研都很好, 26你们自己看情况<ul>
+<li>线代铜: <strong>首推</strong>, 线代无敌</li>
+<li>没咋了(数二), 吃尽天下面(数一): 李林相关内容讲解</li>
+<li>你的葫芦_: 张宇相关内容讲解</li>
+<li>帕拉迪宇(有时候会改名, 自己找找): 张宇头号黑子, 内容听说很好, 他的观点…希望你们有自己的判断</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>需要购买的书籍</strong></p>
+<ul>
+<li>所跟的老师的教材</li>
+<li>各种习题册, 习题册一般不留做题空间, 有平板去微信公众号搜做题本, 没有的话可以去网上买个做题本</li>
+<li>历年真题, 且有一点, 早年真题依然有参考价值, 那种年龄比你大的真题也有</li>
+<li>模拟题(10月后), 习题推荐看b站up</li>
+</ul>
+<p><strong>其他要说的</strong></p>
+<ul>
+<li>如果跟的像张宇这种一轮就能把内容讲全的, 一轮结束好好复习一下, 然后做真题</li>
+<li>习题册做不了太多也不用慌, 重要的是理解吸收总结, 综合性比较好的像1000题, 好好做完一本就还可以了。880的下位可以做108, 金榜那边可以做330还有武忠祥严选题。基本上完整的做完一本，每个知识点都涉及到就差不多了，</li>
+</ul>
+<h2 id="英语-二"><a href="#英语-二" class="headerlink" title="英语(二):"></a><strong>英语(二):</strong></h2><p><strong>模拟</strong>时间安排</p>
+<ul>
+<li><input disabled="" type="checkbox"> 后续: 小三门 + 大小作文<ul>
+<li>”新“题型: 刘琦, 只看方法论(2节, 1h&#x2F;节), 然后直接做, 挺简单的, 一次可以多做几篇, 数量有限认真对待</li>
+<li>翻译: 直接做, 这个熟悉一下流程, 这个做旧题意义就这样, 新题出问题一般都是单词短语问题, 只能说通过旧题训练做题能力</li>
+<li>完型: 直接做, 一般问题都不大</li>
+<li>作文: 我也不是很懂, 感觉也比较套路化, 建议关注一下热点词的拼写之类的</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 07&#x2F;01 - 08&#x2F;31(暑假期间): 阅读x1&#x2F;天 + 继续背单词<ul>
+<li>阅读课(总共30min), b站搜 BV15b421J7Em<ul>
+<li>反正我看这个够用了, 我自己单词量很一般的情况下, 平均每篇错1个</li>
+<li>这个up其他的有需要的看一下吧, 其他的我没看过不做推荐</li>
+<li>我感觉数二总体蛮简单的, 出问题了一般都是单词, 长难句理解问题, 缺什么补什么</li>
+</ul>
+</li>
+<li>阅读最终要达到平均 &lt;15min&#x2F;篇<ul>
+<li>做完之后复盘, <u>我觉得</u>没必要精读, 先找出为什麽做错了, 然后让你做错的因素给解决掉, 这个是最重要的, 剩下的看你自己</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 7月(暑假)之前: 背单词,(至少背完核心词)</li>
+</ul>
+<h2 id="政治"><a href="#政治" class="headerlink" title="政治:"></a><strong>政治:</strong></h2><p>先说<strong>避坑</strong></p>
+<ul>
+<li>你可能觉得考研政治很难, 实际上除25考研, 其他年份的裸考选择都可能做(30分&#x2F;满分50）</li>
+<li>肖1000不用做, 什麽练习册都不用做</li>
+<li>不用开太早, 意义不大</li>
+<li>课不用全听, 或者可以一个都不听</li>
+<li>不要过度依赖肖4肖8, 或者直接说不要依赖肖4肖8</li>
+<li>政治属于及格性质的考试, 大家分数都差不多, 考高考低都很难</li>
+<li>考研是有限时间拿尽可能多的分数, 政治的复习内容, 性价比普遍都很低。。。</li>
+</ul>
+<p><strong>高性价比过线复习方案</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 暑假之前不用碰, 可以看看徐涛马原课的讲解, 其余的。。。性价比不高</li>
+<li><input disabled="" type="checkbox"> 可以过一遍背诵手册</li>
+<li><input disabled="" type="checkbox"> 肖4肖8可以做，但不要过拟合，以做真题的感觉为主，模拟题做多了容易多想</li>
+<li><input disabled="" type="checkbox"> 肖4感觉背诵意义不大, 建议背马原通用理论, 其余大题背一下套话, 然后抄材料, 参考内容: b站搜 BV11ykNYiEJc</li>
+<li><input disabled="" type="checkbox"> 帕拉迪宇一页纸 + 抄材料<ul>
+<li>多自己编口诀, 口诀越逆天越好记</li>
+</ul>
+</li>
+</ul>
+<p><strong>政治做题技巧</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> 中肯就选, 绝对一般不选</li>
+<li><input disabled="" type="checkbox"> 马原多选不全选, 史纲多选一般不全选</li>
+<li><input disabled="" type="checkbox"> 说dang好就选</li>
+<li><input disabled="" type="checkbox"> 多选最少选两个, 把错的排了, 把对的选上, 排不掉的也都选上</li>
+</ul>
+<h1 id="考研择校"><a href="#考研择校" class="headerlink" title="考研择校"></a>考研择校</h1><h1 id="一些重要的话"><a href="#一些重要的话" class="headerlink" title="一些重要的话"></a>一些重要的话</h1><ul>
+<li>考虑好了再决定。不要说什么家里让你考，这是你自己的人生，你要对你自己负责，难道你要让你父母为你负责一辈子？</li>
+<li>考研是在有限的时间里拿更多的分, 不要说所有的分都要拿到, 不可能</li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 ⭐星雨起源⭐
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;海画沙夢w
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+
+
+
+        <script src="/js/main.js">  </script>
+        <script>
+            console.info("Welcome to Argvchs' blog!");
+            if (!window.hasOwnProperty("ontouchstart")) {
+                let html = '<canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas><script src="https://static-argvchs.netlify.app/js/fireworks.min.js"><\/script>';
+                document.body.append(document.createRange().createContextualFragment(html));
+            }
+        </script>
+
+
+        <!-- 鼠标点击特效 -->
+        <canvas
+            id="fireworks"
+            style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"
+        ></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+
+
+
+        <!-- 鼠标指针特效 -->
+        <div id="cursor"></div>
+        <link rel="stylesheet" href="/css/cursor.min.css" />
+        <script src="/js/cursor.min.js"></script>
+
+
+
+        <!-- 流星背景特效 -->
+        <canvas
+            id="background"
+            style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -1"
+        ></canvas>
+        <script src="/js/background.min.js"></script>
+
+
+
+
+       
+
+
+
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="StaRainorigin/StaRainorigin.github.io"
+    data-repo-id="R_kgDOH6wiAg"
+    data-category="General"
+    data-category-id="DIC_kwDOH6wiAs4CY_KG"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="https://static-argvchs.netlify.app/css/giscus.css"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+        
+    </body>
+</html>
